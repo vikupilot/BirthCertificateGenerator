@@ -1,0 +1,187 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Birth Certificate Generator</title>
+    </head>
+  <body>
+    
+    <div class="container" id="INPUTFELID">
+            <div class="card bg-light">
+                <div class="card-body mx-auto">
+                        
+                    <h4 class="card-title mt-3 text-center mb-4">
+                        <i class="fa fa-child fa-1.5x mr-2"></i>
+                        Birth certificate Generator
+                    </h4>
+                        <label for="Name input" class="form-label">Name</label>
+                         <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="Name" required>
+                        </div>
+                        <label for="Name input" class="form-label">Father Name</label>
+                         <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="FatherName" required>
+                        </div>
+                        <label for="Name input" class="form-label">Mother Name</label>
+                         <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="MotherName" required>
+                        </div>
+                        <label for="Date input" class="form-label">Chose Birth Date</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="date"  id="Date" required>
+                        </div>
+                        <label for="Time input" class="form-label">Select Birth Time(hh:mm:ss)</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="time"   step="2" id="Time" required>
+                        </div>
+                          
+                        <label for="Sex input" class="form-label ">Select Sex</label>
+                        <div class="input-group mb-3">
+                            <!-- <input class="form-control" type="date" value="YYYY-MM-DD" id="Date"> -->
+                            <select class="form-control fa" name="Sex" id="Sex" required>
+                                <option value="Male">&#xf183; MALE </option>
+                                <option value="Female">&#xf182; Female</option>
+                                <option value="other">&#xf224;Other</option>
+                            </select>
+                        </div>
+                        <label for="Weight input" class="form-label">Input Weight(kg)</label>
+                         <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="Weight" required>
+                        </div>
+                        <label for="Height input" class="form-label">Input Height(m)</label>
+                         <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="Height" required>
+                        </div>
+                        <label for="Address" class="form-label">Eneter Address</label>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control" id="Address" required></textarea>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn  btn-primary" onclick="GenerateCertificate()" type="button" id="birthGen">Generate Birth Certificate</button>
+                          </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <!-- Template Desgin -->
+
+    <div class="container" id="OutputFiled" ">
+        <nav class="navbar navbar-light  " 
+             style="background-color: aquamarine;"> 
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" width="100px" 
+              height="100px" 
+              class="d-inline-block align-" alt="">
+               
+            </a>
+            
+             <h1  style="color: black;margin-top: 10px; margin-left: 250px; font-size:45px;" >
+                Vidya Manju Seva Hospital<br>
+                    <p style="font-size: x-small ;
+                    margin-left:180px;margin-top: 10px;">
+                    (Main Road Mairwa,Siwan)</p></h1>
+         </nav>
+        <div class="card ">
+            <div class="card-body mx-auto">
+            <p>
+                <h4 class="card-title mt-1 mb-4">
+                        This certifies that
+                        <i class="fa fa-child fa-1.5x mr-1"></i>
+                    
+                        <span style="text-decoration:underline;
+                        text-decoration-style: dotted;" id="tName">.......................</span>
+                    
+                </h4>
+                <h4 class="mb-4">was born to
+                    <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tMotherName"> Sangeeta Devi 
+                    </span>
+                    <!-- <span style="font-size: x-small; margin-left: 160px; display: flow-root;">(mother)  -->
+                    </span>
+                    and <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tFatherName"> bishram Singh</span>
+                     <!-- <span style="font-size: x-small; margin-left: 320px; display: flow-root;">(father) </span> -->
+                </h4>
+                <h4 class="mb-4">In this hospital <i class="fa fa-hospital"></i> on 
+                    <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tDate"
+                    >dd/mm/yyyy</span> at <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tTime"
+                    >mm:ss </span>
+                </h4>
+                <h4 class="mb-4">weight <i class="fa fa-weight "></i>
+                    <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tWeight"
+                    > 10</span
+                    style="text-decoration:underline;
+                    text-decoration-style: dotted;"> kg ,Length 
+                    <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tHeight">10</span> m and Sex is 
+                    <span style="text-decoration:underline;
+                    text-decoration-style: dotted;" id="tSex">Male</span> whose address 
+                </h4>
+                <h4 class="mb-4">
+                    is:- <span  id="tAddress">
+                    vill-baraso ,P.0-anugrah Nagar,dist-siwan</span>
+                </h4>
+            </p>
+         </div>
+        </div>
+        <div class="container ">
+            <div class="input-group mb-3">
+                <button class="btn  btn-primary mt-2"  onclick="PrintCertificate()" type="button" id="birthGen">Print Certificate</button>
+              </div>
+        </div>
+    </div>
+    <!-- <div class="container ">
+        <div class="input-group mb-3">
+            <button class="btn  btn-primary mt-2"  onclick="PrintCertificate()" type="button" id="birthGen">Print</button>
+          </div>
+    </div> -->
+    
+
+
+
+
+
+    <!-- Optional JavaScript -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
